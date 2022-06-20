@@ -56,6 +56,7 @@ export class HesabeHelper {
             let decodeJson = JSON.parse(decrypted);
             let paymentUrl = param.hesabePaymentUrl + "?data=" + decodeJson.response.data;
             console.log(paymentUrl);
+            return paymentUrl;
         } catch (error) {
             console.log(error);
         }
