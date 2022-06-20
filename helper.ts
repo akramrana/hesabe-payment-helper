@@ -4,7 +4,7 @@ import aesjs from "aes-js";
 
 export class HesabeHelper {
 
-    async payment(amount: number | null, transactionNumber: string, src: string = '') {
+    async payment(amount: number, transactionNumber: string, src: string = '') {
         const ivKey = "hesabe iv key";
         const encryptionKey = "hesabe encryption key";
         //
@@ -37,7 +37,8 @@ export class HesabeHelper {
                 name: "john doe",
                 email: "john@yourmail.com",
                 mobile_number: 12345678,
-            };
+        };
+        
         const postData = JSON.stringify(hisabebject);
         let encrypted = await this.encryptAES(postData, encryptionKey, ivKey);
         //
